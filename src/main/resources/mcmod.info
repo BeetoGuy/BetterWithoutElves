@@ -1,0 +1,16 @@
+[
+{
+  "modid": "betterwithoutelves",
+  "name": "Better Without Elves",
+  "description": "A Better With Mods/Botania bridge.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["BeetoGuy"],
+  "credits": "StarToad, for the suggestion",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
