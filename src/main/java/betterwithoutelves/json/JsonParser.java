@@ -8,18 +8,23 @@ import java.nio.file.StandardCopyOption;
 
 public class JsonParser {
     public static void init(File file) {
-        copyExplosionFile(file.getParentFile().toPath().resolve(findExplosionFile()));
+        copyFile(findExplosionFile(), file.getParentFile().toPath().resolve(findExplosionFile()));
+        copyFile(findLootFile(), file.getParentFile().toPath().resolve(findLootFile()));
     }
 
     private static String findExplosionFile() {
         return "betterwithoutelves/json/explosives.json";
     }
 
-    private static void copyExplosionFile(Path to) {
+    private static String findLootFile() {
+        return "betterwithoutelves/json/extra_loot.json";
+    }
+
+    private static void copyFile(String from, Path to) {
         try {
             if (!Files.exists(to)) {
                 Files.createDirectories(to.getParent());
-                Files.copy(getResourceAsStream(findExplosionFile()), to, StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(getResourceAsStream(from), to, StandardCopyOption.REPLACE_EXISTING);
             }
         } catch (Exception e) {
             e.printStackTrace();
